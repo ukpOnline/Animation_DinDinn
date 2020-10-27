@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 protocol ItemListViewCellDelegate {
      func itemSelected(model: ItemModel?)
 }

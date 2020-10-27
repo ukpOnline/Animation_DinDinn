@@ -176,8 +176,9 @@ extension HomeListViewController: UICollectionViewDataSource, UICollectionViewDe
                     cell.delegate = self
 
                 }
-                //                let imgName = "item_\(indexPath.row % 13)"
-                //                cell.updateItem(imageName: imgName)
+                //Using from the WebService
+                //let imgName = "item_\(indexPath.row % 13)"
+                //cell.updateItem(imageName: imgName)
                 return cell
             } else if viewModel?.selectedCategory == .sushi {
                 guard  let cell: ItemListViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemListViewCell.reUseIdentifier, for: indexPath) as? ItemListViewCell  else {

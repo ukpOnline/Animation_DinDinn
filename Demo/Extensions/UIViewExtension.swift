@@ -32,28 +32,4 @@ extension UIView {
         
         self.layer.addSublayer(frameLayer)
     }
-    
-    func animHide(){
-        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseIn],
-                       animations: {
-                        self.center.y -= self.bounds.height
-                        self.layoutIfNeeded()
-                        
-        },  completion: {(_ completed: Bool) -> Void in
-            self.isHidden = true
-        })
-    }
-    
-    func animShowTop(){
-        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseInOut],
-                       animations: {
-//                        self.center.y -= self.bounds.height
-                        self.center.y -= self.bounds.height
-                        self.frame.size.height += 50
-                        self.layoutIfNeeded()
-                        
-        },  completion: {(_ completed: Bool) -> Void in
-            self.isHidden = false
-        })
-    }
 }

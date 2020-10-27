@@ -19,19 +19,22 @@ class HomeViewController: UKBaseViewController {
     @IBOutlet weak var itemListViewTopConstraint: NSLayoutConstraint!
     // MARK: - Variables
 
+    let kTimeDelay = 6.0
+    let kAnimationDuration = 4.0
+
     // MARK: - Overrided Methods
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         self.itemListViewTopConstraint.constant = 580.0
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + kTimeDelay, execute: {
             self.animateShowTop()
         })
     }
     
     // MARK: - Private Methods
     fileprivate func animateShowTop(){
-        UIView.animate(withDuration: 4, delay: 0.0, options: [.curveEaseOut],
+        UIView.animate(withDuration: kAnimationDuration, delay: 0.0, options: [.curveEaseOut],
                        animations: {
                         self.itemListViewTopConstraint.constant = 0
                         self.itemListView.center = self.view.center

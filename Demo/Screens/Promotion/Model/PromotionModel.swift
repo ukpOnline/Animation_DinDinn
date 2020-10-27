@@ -9,10 +9,11 @@
 import Foundation
 
 struct PromotionModel {
-    
+    // MARK: - Variales
     var itemList: [PromotionItemModel] = []
     var selectedIndex: Int = 0
     
+    //Create a Dummy data
     mutating func createDummyModel() {
         
         for index in 0...2 {

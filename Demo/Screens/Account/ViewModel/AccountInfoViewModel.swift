@@ -14,7 +14,6 @@ class AccountInfoViewModel {
     
     // MARK: - Initialization methods -
     init() {
-        //        self.serviceManager  = STLoginWebserviceManager()
         self.accountModel = AccountInfoModel()
         self.accountModel.createDummyModel()
     }
@@ -35,10 +34,6 @@ class AccountInfoViewModel {
     }
     
     func itemFor(indexPath: IndexPath) -> AccountInfoItemModel? {
-        
-        //     if indexPath.row < accountModel.itemList.count {
-        //         return accountModel.itemList[indexPath.row]
-        //     }
         if indexPath.row < accountModel.itemList.count {
             return accountModel.itemList[indexPath.row]
         }

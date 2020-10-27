@@ -14,7 +14,6 @@ class PromotionViewModel {
     
     // MARK: - Initialization methods -
     init() {
-        //        self.serviceManager  = STLoginWebserviceManager()
         self.promotionModel = PromotionModel()
         self.promotionModel.createDummyModel()
     }
@@ -44,16 +43,5 @@ class PromotionViewModel {
      }
      
      // MARK: - Webservice Method
-     func sendItemListRequest(success: @escaping() -> Void, failure: @escaping(NSError) -> Void) {
-         
-         //Code for sending webservice request for login.
-         //           self.serviceManager.sendItemListRequest(userInfo: self.getUserInfo(), success: { () in
-         //               self.itemListRequestPerformed()
-         //               success()
-         //           }, failure: { (error) in
-         //               self.itemListRequestErrorOccured(error: error)
-         //               failure(error)
-         //           })
-     }
      
 }

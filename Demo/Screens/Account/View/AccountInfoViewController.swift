@@ -9,6 +9,8 @@
 import UIKit
 
 class AccountInfoViewController: UKBaseViewController {
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var topSectionView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -29,10 +31,9 @@ class AccountInfoViewController: UKBaseViewController {
       }
       
       // MARK: - Overrided Methods
-
-    
 }
 
+// MARK: - UITableViewDataSource
 extension AccountInfoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.itemCountForSection()

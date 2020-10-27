@@ -17,20 +17,15 @@ protocol PromotionViewControllerDelegate {
 class PromotionViewController: UKBaseViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var topView: UIView!
-    @IBOutlet weak var lblTitle: UILabel!
-//    @IBOutlet weak var viewAllButton: STRoundedButton!
-    
-//    @IBOutlet weak var offerInfoView: STBaseView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
     // MARK: - Variables
     var delegate: PromotionViewControllerDelegate?
-//    var theme = STBaseTheme()
     var viewModel: PromotionViewModel!
     var TVTimer: Timer?
+    let kAnimationTime = 2
     lazy var cellSize: CGSize = {
         let itemWidth = collectionView.frame.width
                let itemHeight: CGFloat = collectionView.frame.height
@@ -41,7 +36,6 @@ class PromotionViewController: UKBaseViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        //self.navigationItems = []
         self.viewModel  = PromotionViewModel()
     }
     
@@ -50,13 +44,13 @@ class PromotionViewController: UKBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.swipedRight))
-        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
-//        self.offerInfoView.addGestureRecognizer(swipeRight)
-
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.swipedLeft))
-        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
-//        self.offerInfoView.addGestureRecognizer(swipeLeft)
+//        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.swipedRight))
+//        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+////        self.offerInfoView.addGestureRecognizer(swipeRight)
+//
+//        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.swipedLeft))
+//        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+////        self.offerInfoView.addGestureRecognizer(swipeLeft)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -75,19 +69,12 @@ class PromotionViewController: UKBaseViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        stopanimateTVWidget()
+        stopAnimateTVWidget()
     }
-    func stopanimateTVWidget(){
+    func stopAnimateTVWidget(){
         self.TVTimer?.invalidate()
         TVTimer = nil
     }
-//    override func configureAppTheme(isLight: Bool? = true) {
-//
-//        super.configureAppTheme(isLight: isLight!)
-//        self.view.backgroundColor = theme.bgPageColor
-//        lblTitle.textColor        = theme.textColor
-//        offerInfoView.borderColor = theme.bgPageColor1 ?? UIColor.orangePrimaryColor
-//    }
     
     // MARK: - IBAction Methods
     @IBAction func viewAllButtonTapped(_ sender: Any) {
@@ -101,7 +88,6 @@ class PromotionViewController: UKBaseViewController {
         pageControl.currentPage = viewModel?.promotionModel.selectedIndex ?? 0
         let pages = viewModel?.promotionModel.itemList.count ?? 1
         pageControl.numberOfPages = pages
-//        viewAllButton.makeRounded()
         self.collectionView.decelerationRate = UIScrollView.DecelerationRate.normal
     }
     
@@ -118,9 +104,7 @@ class PromotionViewController: UKBaseViewController {
         let currentIndex = viewModel.promotionModel.selectedIndex
         let newIndex = currentIndex + 1
         if newIndex > viewModel.itemCountForSection() - 1 {
-//            viewModel.promotionModel.selectedIndex = 0
-//            updateUI(isShowAnimation: false)
-            stopanimateTVWidget()
+            stopAnimateTVWidget()
         } else{
             viewModel.promotionModel.selectedIndex = newIndex
             updateUI()
@@ -128,7 +112,7 @@ class PromotionViewController: UKBaseViewController {
     }
     
     @objc fileprivate func swipedRight(){
-        stopanimateTVWidget()
+        stopAnimateTVWidget()
         let newIndex = viewModel.promotionModel.selectedIndex - 1
         if newIndex < 0 {
             viewModel.promotionModel.selectedIndex = viewModel.itemCountForSection() - 1
@@ -140,8 +124,7 @@ class PromotionViewController: UKBaseViewController {
     }
     
     @objc fileprivate func swipedLeft(){
-        stopanimateTVWidget()
-//        print("TVWidget swipedLeft")
+        stopAnimateTVWidget()
         animateTVWidget()
     }
 }
@@ -176,14 +159,6 @@ extension PromotionViewController : UICollectionViewDataSource, UICollectionView
 //        delegate?.promotionItemTapped(itemModel: itemModel)
 //    }
 
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        for cell in collectionView.visibleCells {
-//            let indexPath = collectionView.indexPath(for: cell)
-////            print("Promotional item visible @ \(String(describing: indexPath))")
-//            viewModel.promotionModel.selectedIndex = indexPath?.row ?? 0
-//            updateUI()
-//        }
-//    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return cellSize
     }

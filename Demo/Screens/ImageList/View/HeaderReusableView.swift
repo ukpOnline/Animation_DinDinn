@@ -10,16 +10,20 @@ import UIKit
 
 class HeaderReusableView: UICollectionReusableView {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var labelFilter: UILabel?
     @IBOutlet weak var buttonVeg: UIButton?
     @IBOutlet weak var buttonSpicy: UIButton?
 
+    // MARK: - Variables
     var isHideItem: Bool = true
 
+    // MARK: - Initializations
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+ 
+    // MARK: - Public Methods
     func updateUI() {
         labelFilter?.isHidden = isHideItem
         buttonVeg?.isHidden = isHideItem

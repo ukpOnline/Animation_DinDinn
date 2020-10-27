@@ -16,8 +16,10 @@ protocol ImageListViewModelDelegate: class {
 
 struct ItemListModel {
     
+    // MARK: - Variables
     var itemList: [ItemModel] = []
-
+    
+  // MARK: - Initializations
     init() {
         
     }
@@ -30,6 +32,7 @@ struct ItemListModel {
         }
     }
 }
+//Enumeration for Category items
 enum CategoryItems {
     case pizza
     case sushi
@@ -46,16 +49,17 @@ enum CategoryItems {
         }
     }
 }
+
 class ImageListViewModel: UKBaseViewModel {
     
     // MARK: - Variables
-
     var items: ItemListModel!
     var serviceManager: ImageListWebservice = ImageListWebservice()
     weak var delegate: ImageListViewModelDelegate?
     var categoryItems: [CategoryItems] = []
     var selectedCategory: CategoryItems = .pizza
-    
+    let demoItemCount = 50
+
     // MARK: - Overrided Methods
     override init() {
         super.init()
@@ -76,6 +80,8 @@ class ImageListViewModel: UKBaseViewModel {
             self.delegate?.dataErrorOccured(message: error.localizedDescription)
         })
     }
+    
+    //To display for the dummy data, altering the model.
     func updateDummyData(){
         let titleNames:[String] = ["Delight", "Hawaiian","The egoist", "CaliFornia", "Lorem ipsum", "Dolor sit amet"]
         let descriptions:[String] = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.", "Duis aute irure dolor in reprehenderit in voluptate velit.", "Excepteur sint occaecat cupidatat non proident", "Sunt in culpa qui officia deserunt mollit anim id est laborum."]
@@ -88,12 +94,11 @@ class ImageListViewModel: UKBaseViewModel {
             self.items.itemList[index].info = itemInfo[index%2]
             self.items.itemList[index].amount = amoint[index%7]
         }
-        
     }
-    
+    //Items count showing the list, for demo pupose reduced the count to demoItemCount.
     func itemsCout() -> Int {
-        //Temporary used as top 50.
-        return self.items.itemList.count > 50 ? 50 : 0
+        //Temporary used as top demoItemCount.
+        return self.items.itemList.count > demoItemCount ? demoItemCount : 0
     }
     
     func itemModelForRow(indexPath: IndexPath) -> ItemModel?  {

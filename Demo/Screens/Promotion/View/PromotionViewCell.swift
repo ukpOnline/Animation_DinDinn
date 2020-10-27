@@ -19,7 +19,6 @@ class PromotionViewCell: UICollectionViewCell {
     @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var roundedView: UIView!
-    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblOfferTitle: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
     
@@ -53,20 +52,5 @@ class PromotionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Private Methods
-
-//    fileprivate func titleInfo() -> NSAttributedString {
-//        var mainString = ""
-//        let highlight = model?.titleHighLight ?? ""
-//        if highlight != "" {
-//            mainString   = highlight + " " + (model?.title ?? "")
-//        } else {
-//            mainString = model?.title ?? ""
-//        }
-//        let range = (mainString as NSString).range(of: highlight)
-//        let mutableAttributedString = NSMutableAttributedString.init(string: mainString)
-//        mutableAttributedString.addAttributes([NSAttributedString.Key.font: UIFont.poppinsSemiBold(16),NSAttributedString.Key.foregroundColor: STBaseTheme().themeColor], range: range)
-//        return mutableAttributedString
-//    }
-    
     
 }
