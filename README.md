@@ -51,16 +51,3 @@
 ### Unit Test
     - DemoTests
     - TestWebservice
-
-
-#### Note
-    - Due to the absence of time, not able to fine tune the code and UI. Due to the absence of detailed screen informations and animation timings, not able to match the given video in some areas, if you feels the issues please give the details. As its a simple UI, worked with MVVM.
-
-# Question
-
-    -Please replicate the below UI and animation flow, and send us your final assignment using GitHub.
-    https://dribbble.com/shots/6571883-Food-Delivery-App
-
-    Requirements:
-    You do not need to use exact images, so please use other suitable images. 
-    Write a networking layer to call the API and fetch data which you have to mock the data to display on the UI.
