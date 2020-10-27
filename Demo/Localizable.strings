@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  Demo
+
+  Created by Unnikrishnan P on 27/06/20.
+  Copyright © 2020 UnniKrishnan. All rights reserved.
+*/
+
+"product.title"              = "Demo iOS";

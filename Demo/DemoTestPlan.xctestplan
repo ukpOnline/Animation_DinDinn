@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "3E6E6C4C-B7E4-49B7-92C4-B2628AC2CBE5",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Demo.xcodeproj",
+        "identifier" : "5A7D7A4624A716CC008A8292",
+        "name" : "DemoTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Demo.xcodeproj",
+        "identifier" : "5A7D7A5124A716CC008A8292",
+        "name" : "DemoUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
