@@ -1,14 +1,17 @@
 # iOS Demo APP Information
 
-    - iOS Deployment Target : 12.0
+    - iOS Deployment Target : 13.0
     - Swift 5
     
 ## Modules
+    - Splash
     - Home 
-         Show an option to Navigate to the Listing Screen.
-            
-    - Listing Screen
-         Downloading the items and sort with image id, as no preference is given.
+        - Offer information
+        - Listing Screen
+            - Downloading the items and sort them with image id
+            - Can Left Swipe to get diffrent categories
+            - Items can add to Cart
+            - You can see the Cart details(Dummy data is used, no logic is implement the selected item details)
     
 ## StoryBords
     - LaunchScreen
@@ -51,11 +54,9 @@
 
 
 #### Note
-    - Due to the absence of iPhone device, i cannot able to Profile the project.
-
+    - Due to the absence of time, not able to fine tune the code and UI. Due to the absence of detailed screen informations and animation timings, not able to match the given video in some areas, if you feels the issues please give the details. As its a simple UI, worked with MVVM.
 
 # Question
-Mini assignment
 
     -Please replicate the below UI and animation flow, and send us your final assignment using GitHub.
     https://dribbble.com/shots/6571883-Food-Delivery-App
@@ -63,23 +64,3 @@ Mini assignment
     Requirements:
     You do not need to use exact images, so please use other suitable images. 
     Write a networking layer to call the API and fetch data which you have to mock the data to display on the UI.
-    Use the following dependencies/libraries to implement:
-    Architecture VIPER
-    RxSwift + RxCocoa
-    Moya/RxMoya
-    ObjectMapper
-    Also, please do note that the best implementation methods/approaches you choose to use for completing the assignment is up to your discretion.
-
-    Kindly get back to us with your feedback by Saturday, October 24th before 10:00am (Singapore time).
-
-    We look forward to hearing back from you soon.
-
-    Best,
-    DinDinn Careers
-
-
-    DinDinn Corporation Pte. Ltd.
-    66 Tannery Lane, #04-09B,
-    Sindo Building, Singapore 347805
-    M: +65 9619 3466 | E: careers@dindinn.com
-    www.dindinn.com
